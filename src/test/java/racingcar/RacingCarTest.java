@@ -15,6 +15,13 @@ public class RacingCarTest {
     }
 
     @Test
+    void testRacingCar_ThrowExceptionOfNullOfCarName() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new RacingCar("");
+        });
+    }
+
+    @Test
     void testRacingCar_NoExceptionForValidNam() {
         new RacingCar("사과자두배");
     }
