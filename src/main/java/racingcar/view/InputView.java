@@ -11,10 +11,10 @@ public class InputView {
         this.inputParser = inputParser;
     }
 
-    public String getInputCarNames(){
+    public String[] getInputCarNames(){
         String carNames = Console.readLine();
-        // TODO: inputValidator 로 유효성 검증
-        return carNames;
+        inputValidator.validateCarNamesFormat(carNames);
+        return inputParser.parseCarNames(carNames);
     }
 
     public int getInputAttempt(){

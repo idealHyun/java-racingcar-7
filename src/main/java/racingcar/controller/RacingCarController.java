@@ -16,6 +16,7 @@ public class RacingCarController {
     }
 
     public void run(){
-
+        outputView.printCarNamesInputMessage();
+        String[] parsedCarNames = inputView.getInputCarNames();
     }
 }
