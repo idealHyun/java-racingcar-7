@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.constant.ErrorMessage;
+
 public class RacingCar {
     private String name;
     private int distance;
@@ -11,7 +13,9 @@ public class RacingCar {
     }
 
     private void validate(String name) {
-        // TODO : name이 5자 초과할 경우 에러 발생
+        if(name.length() >= 6) {
+            throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_ERROR_MESSAGE);
+        }
     }
 
     public void forwardDistance(){
