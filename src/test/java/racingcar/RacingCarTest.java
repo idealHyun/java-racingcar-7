@@ -8,21 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class RacingCarTest {
 
     @Test
-    void testRacingCar_ThrowExceptionOfLengthOfCarName() {
+    void shouldThrowExceptionWhenCarNameExceedsMaxLength() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new RacingCar("사과자두포도");
+            new RacingCar("사과자두포도"); // 길이 제한 초과
         });
     }
 
     @Test
-    void testRacingCar_ThrowExceptionOfNullOfCarName() {
+    void shouldThrowExceptionWhenCarNameIsEmpty() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new RacingCar("");
+            new RacingCar(""); // 빈 문자열
         });
     }
 
     @Test
-    void testRacingCar_NoExceptionForValidNam() {
-        new RacingCar("사과자두배");
+    void shouldNotThrowExceptionWhenCarNameIsValid() {
+        new RacingCar("사과자두배"); // 유효한 이름
     }
 }
