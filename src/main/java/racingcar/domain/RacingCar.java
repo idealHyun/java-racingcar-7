@@ -13,7 +13,7 @@ public class RacingCar {
     }
 
     private void validate(String name) {
-        if(name.length() >= 6) {
+        if(name.length() >= 6 || name.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_ERROR_MESSAGE);
         }
     }
