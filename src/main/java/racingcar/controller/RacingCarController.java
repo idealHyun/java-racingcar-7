@@ -18,5 +18,7 @@ public class RacingCarController {
     public void run(){
         outputView.printCarNamesInputMessage();
         String[] parsedCarNames = inputView.getInputCarNames();
+        outputView.printAttemptInputMessage();
+        int attempt = inputView.getInputAttempt();
     }
 }

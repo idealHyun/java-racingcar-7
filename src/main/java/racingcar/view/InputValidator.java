@@ -21,21 +21,31 @@ public class InputValidator {
         }
     }
 
+    public void validateNumberType(String input){
+        validateNullValue(input);
+
+        try {
+            Integer.parseInt(input.trim());
+        } catch(NumberFormatException e){
+            throw new IllegalArgumentException(ErrorMessage.IS_NOT_NUMBER);
+        }
+    }
+
     private void validateNullValue(String input){
         if(input.trim().isEmpty()) {
-            throw new IllegalArgumentException(ErrorMessage.NULL_ERROR_MESSAGE);
+            throw new IllegalArgumentException(ErrorMessage.NULL_VALUE);
         }
     }
 
     private void validateCarName(String carName){
         if(carName.isEmpty()) {
-            throw new IllegalArgumentException(ErrorMessage.CAR_NAME_IS_NULL_ERROR_MESSAGE);
+            throw new IllegalArgumentException(ErrorMessage.CAR_NAME_IS_NULL);
         }
     }
 
     private void validateDuplicateName(Set<String> hashSet, String carName){
         if(hashSet.contains(carName)) {
-            throw new IllegalArgumentException(ErrorMessage.CAR_NAME_IS_DUPLICATE_ERROR_MESSAGE);
+            throw new IllegalArgumentException(ErrorMessage.CAR_NAME_IS_DUPLICATE);
         }
     }
 }

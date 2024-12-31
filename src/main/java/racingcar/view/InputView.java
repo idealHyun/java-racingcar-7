@@ -19,7 +19,7 @@ public class InputView {
 
     public int getInputAttempt(){
         String attempt = Console.readLine();
-        // TODO: inputValidator 로 유효성 검증
+        inputValidator.validateNumberType(attempt);
         return Integer.parseInt(attempt);
     }
 }
