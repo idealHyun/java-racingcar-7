@@ -19,6 +19,14 @@ public class RacingCar {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
     public void forwardDistance(){
         distance+=1;
     }
@@ -26,5 +34,4 @@ public class RacingCar {
     public String getState(){
         return String.format("%s : %s",name,LINE_MARK.repeat(distance));
     }
-
 }
