@@ -17,12 +17,20 @@ public class RacingCarGame {
     }
 
     public RacingCarGameResult start(List<String> carNames, int attempt){
+        StringBuilder gameRecord = new StringBuilder();
+
         List<RacingCar> racingCars = racingCarGenerator.generateRacingCars(carNames);
-        racingCars.forEach(racingCar -> {
-            if(randomNumberGenerator.generateRandomNumber() >=4){
-                racingCar.forwardDistance();
-            }
-        });
+
+        for(int i = 0; i < attempt; i++){
+            racingCars.forEach(racingCar -> {
+                if(randomNumberGenerator.generateRandomNumber() >=4){
+                    racingCar.forwardDistance();
+                }
+                gameRecord.append(racingCar.getState());
+                gameRecord.append('\n');
+            });
+            gameRecord.append('\n');
+        }
 
         return new RacingCarGameResult();
     }
