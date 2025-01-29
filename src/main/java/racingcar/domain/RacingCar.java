@@ -3,7 +3,8 @@ package racingcar.domain;
 import racingcar.constant.ErrorMessage;
 
 public class RacingCar {
-    private String name;
+    private static final String LINE_MARK = "-";
+    private final String name;
     private int distance;
 
     public RacingCar(String name) {
@@ -22,8 +23,8 @@ public class RacingCar {
         distance+=1;
     }
 
-    public int getDistance() {
-        return distance;
+    public String getState(){
+        return String.format("%s : %s",name,LINE_MARK.repeat(distance));
     }
 
 }
