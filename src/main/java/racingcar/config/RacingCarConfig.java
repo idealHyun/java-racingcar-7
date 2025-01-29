@@ -2,6 +2,7 @@ package racingcar.config;
 
 import racingcar.controller.RacingCarController;
 import racingcar.service.RacingCarGame;
+import racingcar.util.generator.impl.RacingCarGeneratorImpl;
 import racingcar.view.InputParser;
 import racingcar.view.InputValidator;
 import racingcar.view.InputView;
@@ -17,6 +18,6 @@ public abstract class RacingCarConfig {
     }
 
     private static RacingCarGame creatGame(){
-        return new RacingCarGame();
+        return new RacingCarGame(new RacingCarGeneratorImpl());
     }
 }

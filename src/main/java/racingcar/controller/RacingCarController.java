@@ -1,8 +1,11 @@
 package racingcar.controller;
 
+import racingcar.domain.RacingCarGameResult;
 import racingcar.service.RacingCarGame;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
+
+import java.util.List;
 
 public class RacingCarController {
     private final InputView inputView;
@@ -17,8 +20,14 @@ public class RacingCarController {
 
     public void run(){
         outputView.printCarNamesInputMessage();
-        String[] parsedCarNames = inputView.getInputCarNames();
+        List<String> parsedCarNames = inputView.getInputCarNames();
+
         outputView.printAttemptInputMessage();
         int attempt = inputView.getInputAttempt();
+
+        RacingCarGameResult gameResult = racingCarGame.start(parsedCarNames,attempt);
+
+        // 게임 실행 결과 출력
+        // 게임 승자 출력
     }
 }
