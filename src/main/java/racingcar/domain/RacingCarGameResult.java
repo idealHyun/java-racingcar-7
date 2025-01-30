@@ -1,4 +1,4 @@
 package racingcar.domain;
 
-public class RacingCarGameResult {
+public record RacingCarGameResult(String gameRecord, String winnerNames) {
 }

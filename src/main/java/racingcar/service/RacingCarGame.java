@@ -24,7 +24,7 @@ public class RacingCarGame {
         String gameRecord = playGame(racingCars,attempt);
         String winnerNames = selectWinnerRacingCars(racingCars);
 
-        return new RacingCarGameResult();
+        return new RacingCarGameResult(gameRecord,winnerNames);
     }
 
     private String playGame(List<RacingCar> racingCars, int attempt){
