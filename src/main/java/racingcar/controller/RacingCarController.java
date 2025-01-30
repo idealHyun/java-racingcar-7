@@ -26,8 +26,7 @@ public class RacingCarController {
         int attempt = inputView.getInputAttempt();
 
         RacingCarGameResult gameResult = racingCarGame.start(parsedCarNames,attempt);
-
-        // 게임 실행 결과 출력
-        // 게임 승자 출력
+        outputView.printGameRecord(gameResult.gameRecord());
+        outputView.printWinnerNames(gameResult.winnerNames());
     }
 }
